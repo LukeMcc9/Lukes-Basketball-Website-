@@ -110,3 +110,10 @@ ul {
 ul li {
   margin-bottom: 0.5rem;
 }
+
+/* Footer */
+footer {
+  background-color: #f0f0f0;
+  height: 80px;
+  margin-top: 4rem;
+}
