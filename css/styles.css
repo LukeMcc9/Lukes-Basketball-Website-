@@ -101,13 +101,15 @@ nav {
   pointer-events: auto;
 }
 
-/* Links */
-a {
-  color: #0077cc;
+/* Logo Styling */
+.logo-container {
+  text-align: center;
+  padding-top: 2rem;
 }
 
-a:hover {
-  text-decoration: underline;
+.site-logo {
+  height: 64px;
+  opacity: 0.9;
 }
 
 /* Lists */
@@ -118,6 +120,15 @@ ul {
 
 ul li {
   margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+  color: #0077cc;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
