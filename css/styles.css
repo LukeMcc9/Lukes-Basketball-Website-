@@ -6,6 +6,7 @@ body {
   background-color: #fcfcfc;
   color: #222;
   line-height: 1.65;
+  position: relative;
 }
 
 main {
@@ -146,12 +147,15 @@ footer {
   opacity: 0.2;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  margin-left: auto;
+/* Fixed Theme Toggle Button (Top Right) */
+.theme-toggle-fixed {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
 }
 
-#theme-toggle {
+.theme-toggle-fixed #theme-toggle {
   background: none;
   border: none;
   font-size: 1.25rem;
@@ -159,7 +163,7 @@ footer {
   color: #2b6e44;
 }
 
-#theme-toggle:hover {
+.theme-toggle-fixed #theme-toggle:hover {
   color: #1a472c;
 }
 
@@ -190,4 +194,8 @@ body.dark-mode .dropdown-content {
 
 body.dark-mode #theme-toggle {
   color: #86b1f2;
+}
+
+body.dark-mode h1 {
+  color: #f5f5f5;
 }
