@@ -50,6 +50,7 @@ nav {
   gap: 2rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navbar li {
@@ -57,7 +58,7 @@ nav {
 }
 
 .navbar a {
-  color: #0077cc;
+  color: #2b6e44;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -101,7 +102,7 @@ nav {
   pointer-events: auto;
 }
 
-/* Logo Styling */
+/* Logo Header */
 .logo-container {
   text-align: center;
   padding-top: 2rem;
@@ -124,7 +125,7 @@ ul li {
 
 /* Links */
 a {
-  color: #0077cc;
+  color: #2b6e44;
 }
 
 a:hover {
@@ -144,10 +145,10 @@ footer {
   height: 64px;
   opacity: 0.2;
 }
-/* Theme toggle button */
-.theme-toggle-container {
-  text-align: right;
-  padding: 0.5rem 1.5rem 0 0;
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-left: auto;
 }
 
 #theme-toggle {
@@ -155,6 +156,11 @@ footer {
   border: none;
   font-size: 1.25rem;
   cursor: pointer;
+  color: #2b6e44;
+}
+
+#theme-toggle:hover {
+  color: #1a472c;
 }
 
 /* Dark Mode Styles */
@@ -182,3 +188,6 @@ body.dark-mode .dropdown-content {
   border-color: #444;
 }
 
+body.dark-mode #theme-toggle {
+  color: #86b1f2;
+}
