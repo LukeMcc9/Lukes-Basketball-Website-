@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trades and Merger Arbitrage – Luke's Basketball Website</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="/js/theme-toggle.js"></script>
+  <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body>
+
+  <div class="logo-container">
+    <a href="/"><img src="/img/logo.png" alt="Logo" class="site-logo"></a>
+  </div>
+
+  <nav>
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a href="/thoughts/">Basketball Thoughts</a>
+        <ul class="dropdown-content">
+          <li><a href="/thoughts/draft-tiebreaker-trades.html">Draft Tiebreaker Trades</a></li>
+          <li><a href="/thoughts/no-trade-clause-modifications.html">No-Trade Clause Modifications</a></li>
+          <li><a href="/thoughts/pacers-2025-offseason-strategy.html">Pacers 2025 Offseason Strategy</a></li>
+          <li><a href="/thoughts/trades-and-merger-arbitrage.html">Trades and Merger Arbitrage</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="theme-toggle-fixed">
+    <button id="theme-toggle" aria-label="Toggle light/dark mode">🌓</button>
+  </div>
+
+  <main>
+    <h1>Trades and Merger Arbitrage</h1>
+
+    <p><strong>Merger Arbitrage</strong></p>
+
+    <p>The fun thing about mergers and acquisitions is that even after you’ve signed a deal, you don’t actually have a deal quite yet. You have a sort-of-maybe-“what could possibly go wrong?”-deal. You need to get through some weeks/months/years of bankers doing banker stuff and lawyers doing lawyer stuff. You might need to sit through a few uncomfortable regulatory calls. And you will do a whole lot of waiting around while the world changes around you. After that, you can finally wire some ungodly amount of money from one bank account to another. As you might imagine, this post-signing process introduces a fair amount of risk to the deal equation.</p>
+
+    <p>And with risk comes the opportunity for a hedge. Essentially, in the M&A world, the deal-contingent hedge scenario is something along these lines:</p>
+
+    <ol>
+      <li>Buyer agrees to acquire Seller's stuff, both sides have agreed on all the terms of the sale, and they sign an agreement that says “I, Buyer, will buy the stuff. I, Seller, will sell the stuff.”</li>
+      <li>Then, there is often some time between signing and closing (i.e., the deal actually happening), so that each side can get their ducks in a row.</li>
+      <li>At closing, Buyer will need the money to acquire the stuff.</li>
+      <li>Buyer usually won’t have piles of cash sitting around, so it might have to borrow some. And Buyer cash is not always in the same currency as Seller cash, so it might need to convert some.</li>
+      <li>There’s some risk that between signing and closing, interest or exchange rates might move against Buyer.</li>
+      <li>Buyer faces a risk that rates will adversely impact them some months in the future.</li>
+      <li>Buyer wants to manage this risk in some way (like, say, locking in an interest or exchange rate at signing).</li>
+    </ol>
+
+    <p>On its own, this is a pretty straightforward risk to deal with. Presumably, some buyer at some point went out and borrowed a bunch of money at the time of signing thinking “well, this solves the problem that I won’t know the interest rate at closing.” And that buyer would be right.</p>
+
+    <p>But there is another pretty important risk: the deal might not close. Regulators (like the FTC or DOJ) might block the deal. The seller's shareholders might vote against it. Some third-party bidder might emerge in the process. The list goes on. And if that happens, the buyer who went and borrowed a bunch of money at signing is now sitting on a pile of money it doesn’t actually need.</p>
+
+    <p>So, to solve this, there is a market for a product that transfers these risks. A hedge fund will go to Buyer and say, “here’s the guaranteed rate, and if this deal doesn’t close, we’ll just lose money and forget this ever happened.” The Buyer will say, “thanks, here is a bunch of money for taking on this risk.”</p>
+
+    <p>The underlying advantage of the hedge fund is that it has a merger arbitrage desk that spends all of its time assessing whether deals will close. It has some, presumably, smart people who do a, presumably, good job of pricing this deal-contingent derivative risk. And so, over time, the hedge fund makes money on the premium of this risk transfer product.</p>
+
+    <p>This desk also makes (probably more) money by just betting directly on whether deals will close:</p>
+
+    <p>Imagine BigCo announces it’s buying LittleCo for $50 a share. Now, right after the announcement, LittleCo’s stock is trading at, say, $48. That’s $2 less than BigCo promised to pay. Why the gap? Well, investors rationally think, “hey, what if the deal doesn’t go through?”</p>
+
+    <p>This is where HedgeCo’s merger arbitrage desk steps in with a very simple plan:</p>
+    <ul>
+      <li>Step One: Buy LittleCo’s stock at $48.</li>
+      <li>Step Two: Wait.</li>
+      <li>Step Three: If the deal closes, BigCo will pay $50 for each share of LittleCo, and HedgeCo collects a nice $2 per share profit. If the deal doesn’t close, LittleCo’s stock will probably drop back to what it was before, and HedgeCo would lose some money.</li>
+    </ul>
+
+    <p>If HedgeCo’s merger arbitrage folks think the deal is more likely to go through than the public does (and is correct), then money is made.</p>
+
+    <p>Essentially, if you can more accurately predict whether a deal will close or not, it is profitable to trade on that prediction.</p>
+
+    <p><strong>I think you can map this general framework to some NBA trades.</strong></p>
+
+    <p>I mean, M&A transactions are not totally different from an NBA trade transaction. At least in the big picture. Both are agreed-upon transactions where one party pays some price to obtain something valuable. Both involve some period between agreeing on the thing and the thing actually happening. Both have a regulatory body overseeing the transaction. Both involve some risk of the agreed-upon transaction not actually happening, too.</p>
+
+       <p>For example, an NBA trade scenario might consist of something along these lines:</p>
+    <ol>
+      <li>Team A agrees in principle to acquire a player from Team B in exchange for a draft pick.</li>
+      <li>Team B shares the player’s contract, insurance info, and medical records so that Team A can review them and make sure nothing funky is going on.</li>
+      <li>They set up a time with the league office for a trade call.</li>
+      <li>On this call, the NBA (regulatory body) reviews the transaction, makes sure that any open items are addressed, and finalizes the terms of the transaction (including whether it is contingent on the Player reporting to the new team and passing a physical).</li>
+      <li>After the call, one team sends an email to the league office with the terms of the trade, and the other team replies, “we agree.”</li>
+      <li>The league office then sends an email saying, “Here are the conditions that need to be satisfied in order for the deal to close.”</li>
+      <li>If the deal is contingent on the Player reporting to the new team and passing a physical, then the Player needs to report and pass a physical.</li>
+      <li>The deal closes.</li>
+    </ol>
+
+    <p>There is a bit of a time gap between steps 1 and 8. We could imagine any one of the moving parts outlined above going haywire. Maybe there is an insurance obligation that a team is not comfortable with. Maybe the player fails the physical (see the Motiejunas 2016 trade; Mark Williams 2025 trade). Maybe the trade doesn’t pass league approval (see the Chris Paul 2011 trade). Stuff happens!</p>
+
+    <p>All this to say, similar to its M&A world counterpart, in any given agreed upon trade or any trade negotiation which becomes public knowledge, there is some risk that a deal never closes. This risk remains until all obligations discussed on the trade call are resolved. And where there is a risk, there is probably a risk-transferring transaction to be made.</p>
+
+    <p>These transactions could come in many flavors — here are two that have caught my attention:</p>
+
+    <h2>(1) Trading on a Prediction Advantage</h2>
+    <p>Imagine that Team A and Team B agree upon a trade. The key player in this trade has a relatively lengthy injury history. If completed, Team A will clearly be a lot better. Team C, not involved in the deal, thinks there is a 70% chance the trade will actually close. Other teams think there is a 99% chance the deal will actually close.</p>
+
+    <p>Draft picks are derivatives of future team performance. That is, the above closing projections are factored into the value of Team A's draft picks. If the trade goes through, Team A's picks will be worse than if it doesn’t. If Team C is correct that there is only a 70% chance the deal closes, then the market is undervaluing Team A's draft picks. Team C could trade for Team A's draft picks at a discount.</p>
+
+    <p>Team C would reap the benefits of having a prediction advantage.</p>
+
+    <p>Of course, the margins will be relatively small and it will be quite difficult to accurately predict to a necessary confidence level whether a deal will close. But I'm sure people smarter than me could figure it out.</p>
+
+    <p>Another flavor of this trade is much easier to predict and has much larger margins, however.</p>
+
+    <h2>(2) Trading on a Prediction Advantage: Insider Information</h2>
+    <p>What if the rest of the league thinks there is a 0% chance of a trade closing, while you know there is a 100% chance? In the NBA, unlike the public markets, a team can freely trade on its own inside information.</p>
+
+    <p>Imagine Team A has a trade in the works with Team B. Team A will acquire a top 5 player in the league who they will likely have for the next 10 years and the deal has not been shopped to other teams around the league. Only Team A and Team B know of the possibility of this secret trade.</p>
+
+    <p>Before the trade, teams value Team A's future draft picks relatively high given the lack of future young talent. After this trade, teams will value Team A's future draft picks relatively lower given the presence of a top young player on the roster. Team A knows with 100% certainty that the value of these picks will fall. Teams around the league have something less than a 100% certainty (likely well below) that the value of these picks will fall. As a result, Team A has a prediction advantage from its inside information.</p>
+
+    <p>So, just before consummating the deal with Team B, Team A could trade a future pick at its current relatively high value before the value is certain to drop following the trade.</p>
+
+    <p>Of course, there are some drawbacks to this. For one, the NBA trade market is a closed ecosystem with repeat players. Trading on inside information to the extreme detriment of another market actor might not necessarily be a net positive move over a long enough time horizon (other teams may lose trust in future dealings). For another, if the gap in value is big enough, teams will likely already approach transactions with the assumption that there is a relatively large information asymmetry (i.e., why would Team A be so willing to part with this high value pick?). This likely slims the margins a bit as well.</p>
+
+    <p>Ultimately, the drawbacks could be worth it depending on the trade return. It's a balance of cost-benefit.</p>
+
+    <p>Draft picks are derivatives of future team performance. Trades have the ability to influence the evaluation of future team performance. If a team can better assess the likelihood of a trade closing, it can better anticipate how a team will perform. If that assessment is more accurate than the consensus, that team may find draft assets that are mispriced.</p>
+
+    <p>That's a pretty small edge. But small edges matter.</p>
+  </main>
+
+  <footer>
+    <img src="/img/logo.png" alt="Logo watermark" class="footer-logo">
+  </footer>
+
+</body>
+</html>
+
