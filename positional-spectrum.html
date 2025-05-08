@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>NBA Positional Spectrum</title>
+  <meta charset="UTF-8">
+  <title>Luke's Basketball Website</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="/js/theme-toggle.js"></script>
+  <link rel="icon" type="image/png" href="/img/logo.png">
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background-color: #fdfdfd;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
     .tooltip {
       position: absolute;
       background-color: #222;
@@ -26,32 +18,57 @@
       display: none;
       z-index: 9999;
     }
-
     .svg-container {
       max-width: 1000px;
-      margin: 0 auto;
+      margin: 2rem auto;
       display: flex;
       justify-content: center;
     }
-
     #spectrum-svg {
       width: 100%;
       height: auto;
       max-height: 700px;
     }
-
     svg text {
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>NBA Positional Spectrum</h1>
-  <div id="tooltip" class="tooltip"></div>
-
-  <div class="svg-container">
-    <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
+  <div class="logo-container">
+    <a href="/"><img src="/img/logo.png" alt="Logo" class="site-logo"></a>
   </div>
+
+  <nav>
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a href="/thoughts/">Basketball Thoughts</a>
+        <ul class="dropdown-content">
+          <li><a href="/thoughts/draft-tiebreaker-trades.html">Draft Tiebreaker Trades</a></li>
+          <li><a href="/thoughts/no-trade-clause-modifications.html">No-Trade Clause Modifications</a></li>
+          <li><a href="/thoughts/pacers-2025-offseason-strategy.html">Pacers 2025 Offseason Strategy</a></li>
+          <li><a href="/thoughts/trades-and-merger-arbitrage.html">Trades and Merger Arbitrage</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="theme-toggle-fixed">
+    <button id="theme-toggle" aria-label="Toggle light/dark mode">🌓</button>
+  </div>
+
+  <main>
+    <h1 style="text-align:center">NBA Positional Spectrum</h1>
+    <div id="tooltip" class="tooltip"></div>
+    <div class="svg-container">
+      <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
+    </div>
+  </main>
+
+  <footer>
+    <img src="/img/logo.png" alt="Logo watermark" class="footer-logo">
+  </footer>
 
   <script>
     const tooltip = document.getElementById("tooltip");
