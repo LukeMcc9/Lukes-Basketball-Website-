@@ -2,161 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NBA Positional Spectrum</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fff7e6;
+      font-family: sans-serif;
       margin: 0;
       padding: 2rem;
+      background-color: #fdfdfd;
     }
-    h1 {
-      text-align: center;
-    }
-    .spectrum-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    .position-group {
-      width: 22%;
-      background-color: #fefefe;
-      border-radius: 10px;
-      padding: 1rem;
-      margin: 1rem 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-      cursor: pointer;
-    }
-    .position-group:hover {
-      transform: scale(1.03);
-    }
-    .group-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    .position-name {
-      font-weight: bold;
-      color: #333;
-      margin-top: 1rem;
-    }
-    .position-description {
-      font-size: 0.9rem;
-      color: #555;
-    }
-    /* Modal styles */
-    .modal {
+    .tooltip {
+      position: absolute;
+      background-color: #222;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      pointer-events: none;
       display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
+      z-index: 9999;
     }
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 60%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    }
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
+    svg text {
       cursor: pointer;
-    }
-    .arc-graphic {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .arc-graphic img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
   <h1>NBA Positional Spectrum</h1>
-  <div class="arc-graphic">
-    <img src="img/positionalspectrum.png" alt="NBA Positional Arc Diagram">
-  </div>
+  <div id="tooltip" class="tooltip"></div>
 
-  <div class="spectrum-container">
-    <div class="position-group" onclick="openModal('Pure Ballhandler', 'Value derived from handling the ball. Often cannot guard multiple positions.')" style="border-top: 6px solid #c0392b;">
-      <div class="group-title">Guards</div>
-      <div class="position-name">Pure Ballhandler</div>
-      <div class="position-description">Click to learn more</div>
-      <div class="position-name">Modern Point</div>
-      <div class="position-description">Click to learn more</div>
-    </div>
-
-    <div class="position-group" onclick="openModal('True Wing', 'Big energy wing who can guard 3s and some 4s, handle some ball.')" style="border-top: 6px solid #f39c12;">
-      <div class="group-title">Wings</div>
-      <div class="position-name">Off-ball Guard</div>
-      <div class="position-description">Click to learn more</div>
-      <div class="position-name">True Wing</div>
-      <div class="position-description">Click to learn more</div>
-    </div>
-
-    <div class="position-group" onclick="openModal('Modern 4', 'Can guard 4s and 3s reliably, switch onto bigs in a pinch. Can play 5 in smallball.')" style="border-top: 6px solid #27ae60;">
-      <div class="group-title">Swings</div>
-      <div class="position-name">Modern 3</div>
-      <div class="position-description">Click to learn more</div>
-      <div class="position-name">Modern 4</div>
-      <div class="position-description">Click to learn more</div>
-      <div class="position-name">Smallball 5</div>
-      <div class="position-description">Click to learn more</div>
-    </div>
-
-    <div class="position-group" onclick="openModal('Pure Big', 'Too big to switch onto perimeter. Anchors defense and holds position in the paint.')" style="border-top: 6px solid #8e44ad;">
-      <div class="group-title">Bigs</div>
-      <div class="position-name">Hybrid Big</div>
-      <div class="position-description">Click to learn more</div>
-      <div class="position-name">Pure Big</div>
-      <div class="position-description">Click to learn more</div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="positionModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modalTitle"></h2>
-      <p id="modalText"></p>
-    </div>
-  </div>
+  <!-- Embed SVG directly -->
+  <!-- Replace this block with the contents of positional-spectrum-with-ids.svg -->
+  <!-- Example placeholder: -->
+  <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
 
   <script>
-    function openModal(title, text) {
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalText').innerText = text;
-      document.getElementById('positionModal').style.display = 'block';
-    }
-    function closeModal() {
-      document.getElementById('positionModal').style.display = 'none';
-    }
-    window.onclick = function(event) {
-      const modal = document.getElementById('positionModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
+    // When SVG is embedded via <object>, wait until it's loaded
+    const tooltip = document.getElementById("tooltip");
+
+    const descriptions = {
+      "pure-ballhandler": "Primary creation duties. Often limited defensively.",
+      "modern-point": "Scores more than passes. Can run pick and roll.",
+      "off-ball-guard": "Plays off a primary. Can shoot. May struggle defensively.",
+      "true-wing": "Switchable wing. May create a bit or guard up/down.",
+      "modern-3": "Stretches floor. Can defend wings and create secondarily.",
+      "modern-4": "Can mid-post or shoot. Guards big wings or switches.",
+      "smallball-5": "Plays center in spread offenses. Sacrifices rim protection.",
+      "hybrid-big": "Can hedge/switch. Might shoot. Still protects rim.",
+      "pure-big": "Rim protector and rebounder. Not switchable. Paint-bound."
+    };
+
+    document.getElementById("spectrum-svg").addEventListener("load", function() {
+      const svgDoc = this.contentDocument;
+      Object.keys(descriptions).forEach(id => {
+        const el = svgDoc.getElementById(id);
+        if (!el) return;
+
+        el.addEventListener("mousemove", (e) => {
+          tooltip.style.display = "block";
+          tooltip.style.left = e.pageX + 12 + "px";
+          tooltip.style.top = e.pageY + 12 + "px";
+          tooltip.innerText = descriptions[id];
+        });
+
+        el.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
   </script>
 </body>
 </html>
