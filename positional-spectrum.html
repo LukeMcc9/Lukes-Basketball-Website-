@@ -18,17 +18,20 @@
       display: none;
       z-index: 9999;
     }
+
     .svg-container {
-      max-width: 1200px;
+      width: 100%;
       margin: 2rem auto;
       display: flex;
       justify-content: center;
     }
+
     #spectrum-svg {
-      width: 100%;
-      height: auto;
-      max-height: 900px;
+      width: 90vw;
+      height: 1000px;
+      border: none;
     }
+
     svg text {
       cursor: pointer;
     }
@@ -62,7 +65,7 @@
     <h1 style="text-align:center">NBA Positional Spectrum</h1>
     <div id="tooltip" class="tooltip"></div>
     <div class="svg-container">
-      <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
+      <iframe id="spectrum-svg" src="positional-spectrum-with-ids.svg"></iframe>
     </div>
   </main>
 
@@ -91,6 +94,8 @@
 
     document.getElementById("spectrum-svg").addEventListener("load", function () {
       const svgDoc = this.contentDocument;
+      if (!svgDoc) return;
+
       Object.keys(descriptions).forEach(id => {
         const el = svgDoc.getElementById(id);
         if (!el) return;
