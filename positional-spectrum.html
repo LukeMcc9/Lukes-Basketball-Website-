@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>NBA Positional Spectrum</title>
   <style>
     body {
@@ -10,6 +10,11 @@
       padding: 2rem;
       background-color: #fdfdfd;
     }
+
+    h1 {
+      text-align: center;
+    }
+
     .tooltip {
       position: absolute;
       background-color: #222;
@@ -21,6 +26,20 @@
       display: none;
       z-index: 9999;
     }
+
+    .svg-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    #spectrum-svg {
+      width: 100%;
+      height: auto;
+      max-height: 700px;
+    }
+
     svg text {
       cursor: pointer;
     }
@@ -30,13 +49,11 @@
   <h1>NBA Positional Spectrum</h1>
   <div id="tooltip" class="tooltip"></div>
 
-  <!-- Embed SVG directly -->
-  <!-- Replace this block with the contents of positional-spectrum-with-ids.svg -->
-  <!-- Example placeholder: -->
-  <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
+  <div class="svg-container">
+    <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
+  </div>
 
   <script>
-    // When SVG is embedded via <object>, wait until it's loaded
     const tooltip = document.getElementById("tooltip");
 
     const descriptions = {
@@ -51,7 +68,7 @@
       "pure-big": "Rim protector and rebounder. Not switchable. Paint-bound."
     };
 
-    document.getElementById("spectrum-svg").addEventListener("load", function() {
+    document.getElementById("spectrum-svg").addEventListener("load", function () {
       const svgDoc = this.contentDocument;
       Object.keys(descriptions).forEach(id => {
         const el = svgDoc.getElementById(id);
