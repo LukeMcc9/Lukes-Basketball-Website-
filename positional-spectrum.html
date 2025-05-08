@@ -27,8 +27,9 @@
     }
 
     #spectrum-svg {
-      width: 80vw;
-      height: 700px;
+      width: 100%;
+      max-width: 1000px;
+      height: 600px;
       border: none;
     }
 
@@ -65,7 +66,7 @@
     <h1 style="text-align:center">NBA Positional Spectrum</h1>
     <div id="tooltip" class="tooltip"></div>
     <div class="svg-container">
-      <iframe id="spectrum-svg" src="positional-spectrum-with-ids.svg"></iframe>
+      <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
     </div>
   </main>
 
@@ -96,15 +97,18 @@
       const svgDoc = this.contentDocument;
       if (!svgDoc) return;
 
-      Object.keys(descriptions).forEach(id => {
+      Object.entries(descriptions).forEach(([id, text]) => {
         const el = svgDoc.getElementById(id);
         if (!el) return;
 
-        el.addEventListener("mousemove", (e) => {
+        el.addEventListener("mouseenter", (e) => {
+          tooltip.innerText = text;
           tooltip.style.display = "block";
+        });
+
+        el.addEventListener("mousemove", (e) => {
           tooltip.style.left = e.pageX + 12 + "px";
           tooltip.style.top = e.pageY + 12 + "px";
-          tooltip.innerText = descriptions[id];
         });
 
         el.addEventListener("mouseleave", () => {
