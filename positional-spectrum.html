@@ -21,15 +21,14 @@
 
     .svg-container {
       width: 100%;
-      margin: 2rem auto;
       display: flex;
       justify-content: center;
+      margin: 2rem auto;
     }
 
     #spectrum-svg {
-      width: 100%;
-      max-width: 1000px;
-      height: 600px;
+      width: 85vw;
+      height: 750px;
       border: none;
     }
 
@@ -66,7 +65,7 @@
     <h1 style="text-align:center">NBA Positional Spectrum</h1>
     <div id="tooltip" class="tooltip"></div>
     <div class="svg-container">
-      <object id="spectrum-svg" type="image/svg+xml" data="positional-spectrum-with-ids.svg"></object>
+      <embed id="spectrum-svg" src="positional-spectrum-with-ids.svg" type="image/svg+xml" />
     </div>
   </main>
 
@@ -94,7 +93,7 @@
     };
 
     document.getElementById("spectrum-svg").addEventListener("load", function () {
-      const svgDoc = this.contentDocument;
+      const svgDoc = this.getSVGDocument();
       if (!svgDoc) return;
 
       Object.entries(descriptions).forEach(([id, text]) => {
