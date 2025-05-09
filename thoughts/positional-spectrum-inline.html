@@ -22,23 +22,25 @@
       display: none;
       z-index: 9999;
     }
-    .svg-container {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      padding: 0;
-      transform: scale(0.25) translateX(-160px);
+    .full-bleed-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(0.25);
       transform-origin: top left;
+      z-index: 1;
     }
-    .svg-container svg {
+    .full-bleed-svg svg {
       display: block; 
       margin: 0;
     }
+
     svg text {
       cursor: pointer;
     }
+
     main.positional-spectrum-page {
-       Padding: 0;
+       padding: 0;
     }
   </style>
 </head>
@@ -67,10 +69,10 @@
   </div>
 
   <main class="positional-spectrum-page">
-    <h1 style="text-align:center">NBA Positional Spectrum</h1>
+    <h1 style="text-align:center">Positional Spectrum</h1>
     <div id="tooltip" class="tooltip"></div>
     
-<div class="svg-container">
+<div class="full-bleed-svg">
   <svg fill="none" height="2229" viewBox="0 0 6237 2229" width="6237" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_2_11)">
 <path d="M33 1104C33 1104 414.318 206.4 1033 213C1651.68 219.6 1929 1104 1929 1104" stroke="#FF0000" stroke-width="10"/>
