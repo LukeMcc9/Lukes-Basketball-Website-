@@ -27,8 +27,8 @@
     }
 
     #spectrum-svg {
-      width: 85vw;
-      height: 750px;
+      width: 95vw;
+      height: 850px;
       border: none;
     }
 
@@ -65,7 +65,7 @@
     <h1 style="text-align:center">NBA Positional Spectrum</h1>
     <div id="tooltip" class="tooltip"></div>
     <div class="svg-container">
-      <embed id="spectrum-svg" src="positional-spectrum-with-ids.svg" type="image/svg+xml" />
+      <iframe id="spectrum-svg" src="positional-spectrum-with-ids.svg"></iframe>
     </div>
   </main>
 
@@ -92,26 +92,30 @@
       "bigs": "Big category heading."
     };
 
-    document.getElementById("spectrum-svg").addEventListener("load", function () {
-      const svgDoc = this.getSVGDocument();
-      if (!svgDoc) return;
+    window.addEventListener("DOMContentLoaded", () => {
+      const iframe = document.getElementById("spectrum-svg");
 
-      Object.entries(descriptions).forEach(([id, text]) => {
-        const el = svgDoc.getElementById(id);
-        if (!el) return;
+      iframe.addEventListener("load", () => {
+        const svgDoc = iframe.contentDocument || iframe.getSVGDocument();
+        if (!svgDoc) return;
 
-        el.addEventListener("mouseenter", (e) => {
-          tooltip.innerText = text;
-          tooltip.style.display = "block";
-        });
+        Object.entries(descriptions).forEach(([id, text]) => {
+          const el = svgDoc.getElementById(id);
+          if (!el) return;
 
-        el.addEventListener("mousemove", (e) => {
-          tooltip.style.left = e.pageX + 12 + "px";
-          tooltip.style.top = e.pageY + 12 + "px";
-        });
+          el.addEventListener("mouseenter", () => {
+            tooltip.innerText = text;
+            tooltip.style.display = "block";
+          });
 
-        el.addEventListener("mouseleave", () => {
-          tooltip.style.display = "none";
+          el.addEventListener("mousemove", (e) => {
+            tooltip.style.left = e.pageX + 12 + "px";
+            tooltip.style.top = e.pageY + 12 + "px";
+          });
+
+          el.addEventListener("mouseleave", () => {
+            tooltip.style.display = "none";
+          });
         });
       });
     });
