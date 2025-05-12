@@ -64,7 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const id = getBallId(team);
       ball.id = id;
 
-      const size = 50 + Math.random() * 40; // simplified proportional size
+      let size;
+      if (["Dan", "Mikey", "Kwet", "Jim"].includes(team)) {
+        size = 100;
+      } else if (["Scott", "Hadi", "Ray", "Luke"].includes(team)) {
+        size = 75;
+      } else if (["Shane", "Coleman"].includes(team)) {
+        size = 55;
+      } else {
+        size = 0; // fixed picks won’t animate
+      }
+
       ball.style.width = `${size}px`;
       ball.style.height = `${size}px`;
       ball.style.backgroundColor = teamColors[team];
