@@ -8,9 +8,49 @@
 </head>
 <body>
   <h1>Fantasy Draft Lottery</h1>
-  <button id="start-button">Run Lottery</button>
-  <div id="race-container"></div>
-  <div id="results"></div>
+   <h2>Presented by Conatycast</h2>
+
+  <div class="odds-table-container">
+    <h2>Lottery Odds (Picks 1–12)</h2>
+    <table class="odds-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th>
+          <th>6th</th><th>7th</th><th>8th</th><th>9th</th><th>10th</th>
+          <th>11th</th><th>12th</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Dan</td><td data-team="Dan" data-pick="1">12.0%</td><td data-team="Dan" data-pick="2">11.8%</td><td data-team="Dan" data-pick="3">11.5%</td><td data-team="Dan" data-pick="4">11.2%</td><td data-team="Dan" data-pick="5">10.9%</td><td data-team="Dan" data-pick="6">10.4%</td><td data-team="Dan" data-pick="7">9.9%</td><td data-team="Dan" data-pick="8">9.0%</td><td data-team="Dan" data-pick="9">7.8%</td><td data-team="Dan" data-pick="10">5.5%</td><td data-team="Dan" data-pick="11">0.0%</td><td data-team="Dan" data-pick="12">0.0%</td></tr>
+        <tr><td>Mikey</td><td data-team="Mikey" data-pick="1">12.0%</td><td data-team="Mikey" data-pick="2">11.8%</td><td data-team="Mikey" data-pick="3">11.5%</td><td data-team="Mikey" data-pick="4">11.2%</td><td data-team="Mikey" data-pick="5">10.9%</td><td data-team="Mikey" data-pick="6">10.4%</td><td data-team="Mikey" data-pick="7">9.9%</td><td data-team="Mikey" data-pick="8">9.0%</td><td data-team="Mikey" data-pick="9">7.8%</td><td data-team="Mikey" data-pick="10">5.5%</td><td data-team="Mikey" data-pick="11">0.0%</td><td data-team="Mikey" data-pick="12">0.0%</td></tr>
+        <tr><td>Kwet</td><td data-team="Kwet" data-pick="1">12.0%</td><td data-team="Kwet" data-pick="2">11.8%</td><td data-team="Kwet" data-pick="3">11.5%</td><td data-team="Kwet" data-pick="4">11.2%</td><td data-team="Kwet" data-pick="5">10.9%</td><td data-team="Kwet" data-pick="6">10.4%</td><td data-team="Kwet" data-pick="7">9.9%</td><td data-team="Kwet" data-pick="8">9.0%</td><td data-team="Kwet" data-pick="9">7.8%</td><td data-team="Kwet" data-pick="10">5.5%</td><td data-team="Kwet" data-pick="11">0.0%</td><td data-team="Kwet" data-pick="12">0.0%</td></tr>
+        <tr><td>Jim</td><td data-team="Jim" data-pick="1">12.0%</td><td data-team="Jim" data-pick="2">11.8%</td><td data-team="Jim" data-pick="3">11.5%</td><td data-team="Jim" data-pick="4">11.2%</td><td data-team="Jim" data-pick="5">10.9%</td><td data-team="Jim" data-pick="6">10.4%</td><td data-team="Jim" data-pick="7">9.9%</td><td data-team="Jim" data-pick="8">9.0%</td><td data-team="Jim" data-pick="9">7.8%</td><td data-team="Jim" data-pick="10">5.5%</td><td data-team="Jim" data-pick="11">0.0%</td><td data-team="Jim" data-pick="12">0.0%</td></tr>
+        <tr><td>Scott</td><td data-team="Scott" data-pick="1">10.0%</td><td data-team="Scott" data-pick="2">10.1%</td><td data-team="Scott" data-pick="3">10.1%</td><td data-team="Scott" data-pick="4">10.2%</td><td data-team="Scott" data-pick="5">10.3%</td><td data-team="Scott" data-pick="6">10.3%</td><td data-team="Scott" data-pick="7">10.3%</td><td data-team="Scott" data-pick="8">10.3%</td><td data-team="Scott" data-pick="9">10.0%</td><td data-team="Scott" data-pick="10">8.5%</td><td data-team="Scott" data-pick="11">0.0%</td><td data-team="Scott" data-pick="12">0.0%</td></tr>
+        <tr><td>Hadi</td><td data-team="Hadi" data-pick="1">10.0%</td><td data-team="Hadi" data-pick="2">10.1%</td><td data-team="Hadi" data-pick="3">10.1%</td><td data-team="Hadi" data-pick="4">10.2%</td><td data-team="Hadi" data-pick="5">10.3%</td><td data-team="Hadi" data-pick="6">10.3%</td><td data-team="Hadi" data-pick="7">10.3%</td><td data-team="Hadi" data-pick="8">10.3%</td><td data-team="Hadi" data-pick="9">10.0%</td><td data-team="Hadi" data-pick="10">8.5%</td><td data-team="Hadi" data-pick="11">0.0%</td><td data-team="Hadi" data-pick="12">0.0%</td></tr>
+        <tr><td>Ray</td><td data-team="Ray" data-pick="1">10.0%</td><td data-team="Ray" data-pick="2">10.1%</td><td data-team="Ray" data-pick="3">10.1%</td><td data-team="Ray" data-pick="4">10.2%</td><td data-team="Ray" data-pick="5">10.3%</td><td data-team="Ray" data-pick="6">10.3%</td><td data-team="Ray" data-pick="7">10.3%</td><td data-team="Ray" data-pick="8">10.3%</td><td data-team="Ray" data-pick="9">10.0%</td><td data-team="Ray" data-pick="10">8.5%</td><td data-team="Ray" data-pick="11">0.0%</td><td data-team="Ray" data-pick="12">0.0%</td></tr>
+        <tr><td>Luke</td><td data-team="Luke" data-pick="1">10.0%</td><td data-team="Luke" data-pick="2">10.1%</td><td data-team="Luke" data-pick="3">10.1%</td><td data-team="Luke" data-pick="4">10.2%</td><td data-team="Luke" data-pick="5">10.3%</td><td data-team="Luke" data-pick="6">10.3%</td><td data-team="Luke" data-pick="7">10.3%</td><td data-team="Luke" data-pick="8">10.3%</td><td data-team="Luke" data-pick="9">10.0%</td><td data-team="Luke" data-pick="10">8.5%</td><td data-team="Luke" data-pick="11">0.0%</td><td data-team="Luke" data-pick="12">0.0%</td></tr>
+        <tr><td>Shane</td><td data-team="Shane" data-pick="1">6.0%</td><td data-team="Shane" data-pick="2">6.3%</td><td data-team="Shane" data-pick="3">6.7%</td><td data-team="Shane" data-pick="4">7.2%</td><td data-team="Shane" data-pick="5">7.8%</td><td data-team="Shane" data-pick="6">8.5%</td><td data-team="Shane" data-pick="7">9.6%</td><td data-team="Shane" data-pick="8">11.4%</td><td data-team="Shane" data-pick="9">14.4%</td><td data-team="Shane" data-pick="10">22.1%</td><td data-team="Shane" data-pick="11">0.0%</td><td data-team="Shane" data-pick="12">0.0%</td></tr>
+        <tr><td>Coleman</td><td data-team="Coleman" data-pick="1">6.0%</td><td data-team="Coleman" data-pick="2">6.3%</td><td data-team="Coleman" data-pick="3">6.7%</td><td data-team="Coleman" data-pick="4">7.2%</td><td data-team="Coleman" data-pick="5">7.8%</td><td data-team="Coleman" data-pick="6">8.5%</td><td data-team="Coleman" data-pick="7">9.6%</td><td data-team="Coleman" data-pick="8">11.4%</td><td data-team="Coleman" data-pick="9">14.4%</td><td data-team="Coleman" data-pick="10">22.1%</td><td data-team="Coleman" data-pick="11">0.0%</td><td data-team="Coleman" data-pick="12">0.0%</td></tr>
+        <tr><td>Amit</td><td data-team="Amit" data-pick="1">0.0%</td><td data-team="Amit" data-pick="2">0.0%</td><td data-team="Amit" data-pick="3">0.0%</td><td data-team="Amit" data-pick="4">0.0%</td><td data-team="Amit" data-pick="5">0.0%</td><td data-team="Amit" data-pick="6">0.0%</td><td data-team="Amit" data-pick="7">0.0%</td><td data-team="Amit" data-pick="8">0.0%</td><td data-team="Amit" data-pick="9">0.0%</td><td data-team="Amit" data-pick="10">0.0%</td><td data-team="Amit" data-pick="11">100.0%</td><td data-team="Amit" data-pick="12">0.0%</td></tr>
+        <tr><td>Dan (via Chris)</td><td data-team="Dan (via Chris)" data-pick="1">0.0%</td><td data-team="Dan (via Chris)" data-pick="2">0.0%</td><td data-team="Dan (via Chris)" data-pick="3">0.0%</td><td data-team="Dan (via Chris)" data-pick="4">0.0%</td><td data-team="Dan (via Chris)" data-pick="5">0.0%</td><td data-team="Dan (via Chris)" data-pick="6">0.0%</td><td data-team="Dan (via Chris)" data-pick="7">0.0%</td><td data-team="Dan (via Chris)" data-pick="8">0.0%</td><td data-team="Dan (via Chris)" data-pick="9">0.0%</td><td data-team="Dan (via Chris)" data-pick="10">0.0%</td><td data-team="Dan (via Chris)" data-pick="11">0.0%</td><td data-team="Dan (via Chris)" data-pick="12">100.0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button id="start-button">Start Lottery</button>
+  <button id="draw-button" disabled>Draw Next Pick</button>
+
+  <div id="machine-container">
+    <div id="ball-machine"></div>
+    <div id="big-reveal"></div>
+  </div>
+
+  <div id="drawn-picks">
+    <h2>Results</h2>
+    <ol id="results-list"></ol>
+  </div>
+
   <script src="lottery.js"></script>
 </body>
 </html>
