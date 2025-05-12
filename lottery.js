@@ -28,26 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "Dan (via Chris)": "#c0392b"
   };
 
-  const odds = {
-    "Dan": [12.0, 11.8, 11.5, 11.2, 10.9, 10.4, 9.9, 9.0, 7.8, 5.5],
-    "Mikey": [12.0, 11.8, 11.5, 11.2, 10.9, 10.4, 9.9, 9.0, 7.8, 5.5],
-    "Kwet": [12.0, 11.8, 11.5, 11.2, 10.9, 10.4, 9.9, 9.0, 7.8, 5.5],
-    "Jim": [12.0, 11.8, 11.5, 11.2, 10.9, 10.4, 9.9, 9.0, 7.8, 5.5],
-    "Scott": [10.0, 10.1, 10.1, 10.2, 10.3, 10.3, 10.3, 10.3, 10.0, 8.5],
-    "Hadi": [10.0, 10.1, 10.1, 10.2, 10.3, 10.3, 10.3, 10.3, 10.0, 8.5],
-    "Ray": [10.0, 10.1, 10.1, 10.2, 10.3, 10.3, 10.3, 10.3, 10.0, 8.5],
-    "Luke": [10.0, 10.1, 10.1, 10.2, 10.3, 10.3, 10.3, 10.3, 10.0, 8.5],
-    "Shane": [6.0, 6.3, 6.7, 7.2, 7.8, 8.5, 9.6, 11.4, 14.4, 22.1],
-    "Coleman": [6.0, 6.3, 6.7, 7.2, 7.8, 8.5, 9.6, 11.4, 14.4, 22.1],
-    "Amit": [],
-    "Dan (via Chris)": []
-  };
-
   const machine = document.getElementById("ball-machine");
   const bigReveal = document.getElementById("big-reveal");
   const startButton = document.getElementById("start-button");
   const drawButton = document.getElementById("draw-button");
   const resetButton = document.getElementById("reset-button");
+  const woahButton = document.getElementById("woah-button");
+  const woahSound = document.getElementById("woah-sound");
   const resultsList = document.getElementById("results-list");
 
   let draftOrder = [];
@@ -59,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startButton.disabled = true;
     drawButton.disabled = false;
     resetButton.disabled = false;
-
     resultsList.innerHTML = "";
     machine.innerHTML = "";
     bigReveal.style.display = "none";
@@ -78,11 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const id = getBallId(team);
       ball.id = id;
 
-      const baseSize = 50;
-      const maxSize = 100;
-      const maxOdds = 22.1;
-      const teamOdds = odds[team]?.[0] || 0;
-      const size = baseSize + (teamOdds / maxOdds) * (maxSize - baseSize);
+      const size = 50 + Math.random() * 40; // simplified proportional size
       ball.style.width = `${size}px`;
       ball.style.height = `${size}px`;
       ball.style.backgroundColor = teamColors[team];
@@ -105,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const { team, pick } = picksToReveal[currentPickIndex];
     const id = getBallId(team);
     const ball = document.getElementById(id);
-
     if (ball) {
       ball.remove();
       delete balls[team];
@@ -134,7 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   resetButton.addEventListener("click", () => {
-    location.reload(); // easiest full reset
+    location.reload();
+  });
+
+  woahButton.addEventListener("click", () => {
+    woahSound.currentTime = 0;
+    woahSound.play();
   });
 
   function animateBalls() {
@@ -159,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = [];
 
     for (let i = 0; i < 10; i++) {
-      const weights = pool.map(team => odds[team]?.[i] || 0);
+      const weights = pool.map(() => 1);
       const chosen = weightedRandom(pool, weights);
       result.push(chosen);
       pool.splice(pool.indexOf(chosen), 1);
