@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bigReveal = document.getElementById("big-reveal");
   const startButton = document.getElementById("start-button");
   const drawButton = document.getElementById("draw-button");
+  const resetButton = document.getElementById("reset-button");
   const resultsList = document.getElementById("results-list");
 
   let draftOrder = [];
@@ -57,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
   startButton.addEventListener("click", () => {
     startButton.disabled = true;
     drawButton.disabled = false;
+    resetButton.disabled = false;
+
     resultsList.innerHTML = "";
     machine.innerHTML = "";
     bigReveal.style.display = "none";
@@ -75,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const id = getBallId(team);
       ball.id = id;
 
-      // Scale size from 50 to 100px based on Pick 1 odds
       const baseSize = 50;
       const maxSize = 100;
       const maxOdds = 22.1;
@@ -129,6 +131,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPickIndex >= picksToReveal.length) {
       drawButton.disabled = true;
     }
+  });
+
+  resetButton.addEventListener("click", () => {
+    location.reload(); // easiest full reset
   });
 
   function animateBalls() {
