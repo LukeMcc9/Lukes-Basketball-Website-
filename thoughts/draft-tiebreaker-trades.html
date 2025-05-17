@@ -37,63 +37,47 @@
 
     <p>This page explores the idea that teams might find small but repeatable trade value in the NBA’s draft coin flip process — specifically when two or more teams are tied in record and the league flips a coin to assign draft order.</p>
 
-    <p>
-      If two or more non-lottery teams finish the Regular Season with the same record, their draft order is determined by a random drawing. In the first round, the winner of the drawing receives the earlier pick. In the second round, the loser of the drawing receives the earlier pick.
-      This tiebreaking procedure typically takes place about a week after the Regular Season ends and soon after the completion of the Play-in Tournament. Although it is rare, there is a window for teams to make trades after the Regular Season ends and before the tiebreaking procedures have commenced.
-      Following the trade deadline, teams may resume trades on the day following the last Regular Season Game, provided that:
-      <ul>
-        <li>(i) No trades may take place during the Moratorium Period, and</li>
-        <li>(ii) No team participating in the Play-in Tournament or the Playoffs may:
-          <ul>
-            <li>(a) Trade a player on its postseason roster until after the team’s last game of the season,</li>
-            <li>(b) Include a player on its postseason roster whose contract the team acquired in a trade occurring after the end of the Regular Season, or</li>
-            <li>(c) Have more than 15 players (not including Two-Way Players) on its Active and Inactive Lists until the day following the team’s last game of the season.</li>
-          </ul>
-        </li>
-      </ul>
-      All teams, including those not yet eliminated from the Play-in Tournament and/or the Playoffs, are permitted to trade draft picks, draft rights, and cash. The deadline for trading current year draft picks is 2:00 PM ET on the day of the Draft. Teams may not trade current year lottery picks from 6:00 PM ET on the day prior to the lottery until the lottery concludes.
-    </p>
+    <p>If two or more non-lottery teams finish the Regular Season with the same record, their draft order is determined by a random drawing.  In the first round, the winner of the drawing receives the earlier pick. In the second round, the loser of the drawing receives the earlier pick. 
+    This tiebreaking procedure typically takes place about a week after the Regular Season ends and soon after the completion of the Play-in Tournament.  Although it is rare, there is a window for teams to make trades after the Regular Season ends and before the tiebreaking procedures have commenced.  
+    Following the trade deadline, teams may resume trades on the day following the last Regular Season Game, provided that:
+    (i)	no trades may take place during the Moratorium Period and 
+    (ii)	no team participating in the Play-in Tournament or the Playoffs may
+    (a) trade a player on its postseason until after the team’s last game of the season, 
+    (b) include a player on its postseason roster whose contract the team acquired in a trade occurring after the end of the Regular Season, or
+    (c) have more than a total of 15 players (not including Two-Way Players) on its Active and Inactive Lists until the day following the date of the team’s last game of the season.  
+    All teams, including those that have not yet been eliminated from the Play-in Tournament and/or the Playoffs, are permitted to trade draft picks, draft rights to players, and cash.  The deadline for trading current year draft picks is 2:00 PM ET on the day of the Draft.  Teams may not trade current year lottery picks from 6:00 PM ET on the day prior to the lottery until immediately after the lottery.  
+    Within this window, there is an opportunity for teams to resolve the tiebreaker on their own terms as opposed to leaving it up to the league’s procedures (i.e., leaving it up to chance). 
+    Let’s imagine that Team A and Team B are tied for picks 17 and 18. Team A could trade its 50% chance at the more favorable pick (17) for Team B’s 50% chance at the less favorable pick (18), plus a small asset to close the gap (let’s say a 2027 Second-Round Pick). This transaction would be formatted as a pick swap:</p>
 
-    <p>
-      Within this window, there is an opportunity for teams to resolve the tiebreaker on their own terms rather than leaving it up to the league’s procedures. Imagine Team A and Team B are tied for Picks 17 and 18. Team A could trade its 50% chance at the more favorable pick (17) for Team B’s 50% chance at the less favorable pick (18), plus a small asset like a 2027 Second-Round Pick. That transaction would be structured as a pick swap:
-    </p>
-
-    <table>
-      <tr><th>Team A Receives</th><th>Team B Receives</th></tr>
-      <tr><td>Less favorable of Team A and Team B picks</td><td>More favorable of Team A and Team B picks</td></tr>
-      <tr><td>2027 Second-Round Pick (via Team B)</td><td></td></tr>
+    <table style="width:100%; border-collapse: collapse; text-align: left;">
+      <tr>
+        <th style="background-color: #f9d9cc; border: 1px solid #000; padding: 8px;">Team A Receives</th>
+        <th style="background-color: #d5ecf9; border: 1px solid #000; padding: 8px;">Team B Receives</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000; padding: 8px;">Less favorable of Team A and Team B picks.</td>
+        <td style="border: 1px solid #000; padding: 8px;" rowspan="2">More Favorable of Team A and Team B picks.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000; padding: 8px;">2027 Second-Round Pick (via Team B).</td>
+      </tr>
     </table>
 
-    <p>
-      It’s somewhat surprising that most teams passively accept the tiebreaker to decide their draft fate, even though the randomness creates a bargaining environment where mutual gains are possible. Teams may have different preferences—one might highly value certainty or target a specific player, while another might be indifferent to minor pick movement and prefer an added asset. Yet, instead of negotiating to reflect those preferences, teams mostly defer to the default randomization. That suggests either an underappreciation of the surplus available or frictions—informational, institutional, or cultural—that inhibit efficient trades. In case it’s the former, I built a model to explore this.
-    </p>
+    <p>It’s somewhat surprising that most teams passively accept the tiebreaker to decide their draft fate, given that the randomness creates precisely the kind of bargaining environment where mutual gains are possible. In theory, the teams involved may have differing preferences—one might highly value certainty or a better shot at a specific player, while another might be indifferent to slight pick movement and prefer additional an additional small asset. Yet instead of bargaining to reallocate the probabilistic rights based on those preferences, teams largely defer to the default randomization. That passivity suggests either an underappreciation of the surplus available, or frictions—informational, institutional, or cultural—that inhibit what should be efficient trades. In case the passivity stems from an underappreciation of the small potential surplus available, I attempted to build a model exploring that. </p>
 
-    <h2>Tiebreaker Trade Model</h2>
+    <h2>TIEBREAKER TRADE MODEL</h2>
 
-    <p>
-      I built a model that explores the potential trade surplus NBA teams can generate by trading out of the NBA tiebreaker procedures. It contemplates 2-, 3-, and 4-team ties involving non-lottery picks, resolved using future second-round picks and/or cash. The goal is to evaluate whether locking in a specific pick with added compensation is better than relying on the league’s random draw.
-    </p>
+    <p>I built a model that explores the potential trade surplus NBA teams can generate by trading out of the NBA tiebreaker procedures. The model contemplates 2-, 3-, and 4-team ties involving non-lottery picks resolved with trade packages containing only future second-round draft picks and cash. The model is intended to help teams evaluate whether locking in a particular pick, with compensation, produces a better expected result than simply allowing the league’s tiebreaking procedures to play out. 
+    To build the model, I simulated every valid tiebreaker configuration in this range and calculated the expected value of each possible outcome using smoothed VORP (Value Over Replacement Player) curves based on historical draft results from 2004 to 2023. The smoothing method filters out year-to-year noise while preserving the overall trends in player value by draft slot. Fort each team in a tie group, the model compares the expected value of remaining in the draw against the value of accepting the lesser of the tied picks plus some form of compensation. 
+    The model distinguishes between two value perspectives: basketball value, which includes only the draft pick values, and ownership value, which also accounts for cash compensation. To make these tradeoffs comparable, I used a conversion rate of $3 million per 1.0 VORP. This rate is a ballpark estimate based on previous draft pick sales. Second-Round picks are bucketed into early, mid, and late ranges, and are discounted based on how far into the future they convey using an 8% annual rate (another ballpark estimate). Additionally, I applied a small bonus to teams that finish last in a tiebreaker to account for the marginally better position granted in the second round. 
+    In three- and four-team tie scenarios where only two teams participate in a trade, I adjusted the value of the traded pick using a probability-weighted expected VORP. This is to account for the lingering probability owned by the third parties. 
+    The model outputs both basketball and ownership surplus for each simulated trade and labels each result as surplus-positive, neutral, or deficit-generating. To evaluate how often a surplus would be generating from a given trade, the model also runs a Monte Carlo-style simulation of thousands of potential tiebreaker trade scenarios. For each trade structure (e.g., Pick 20 + mid-second for Pick 19), the simulation randomly assigns picks based on draw odds, calculates resulting VORP outcomes for each team, and compares those to the locked-in trade alternative. This allows the model to track how frequently a given structure produces surplus, breaks even, or results in a deficit from both the basketball and ownership perspectives. The output is a full distribution of outcomes, helping teams identify not just individual trades, but the overall conditions under which these deals tend to generate value.
+    There is a lot that this model does not take into account. However, I’m hopeful it is at least an interesting starting point to thinking about a new flavor of trade in the NBA.  
+    Here is the trade model tool if you want to explore it a bit. </p>
 
-    <p>
-      To build the model, I simulated every valid tiebreaker configuration and calculated expected values using smoothed VORP (Value Over Replacement Player) curves from 2004 to 2023. These smoothed curves reduce year-to-year noise while preserving long-term trends. For each team, the model compares the value of remaining in the draw versus taking the worst of the tied picks plus compensation.
-    </p>
+    <p><em>Note: it may be a bit slow to load. I’m running it as cheap as I can, which means it needs a little time to wake up in between sessions.</em></p>
 
-    <p>
-      The model calculates value from two perspectives: basketball value (draft picks only) and ownership value (picks + cash). I applied a $3 million per 1.0 VORP conversion rate to include cash tradeoffs. Future second-round picks are grouped by range (early/mid/late) and discounted at 8% annually. Teams that finish last in a tiebreaker receive a small bonus to reflect second-round positioning.
-    </p>
-
-    <p>
-      In multi-team ties where only two teams participate in a trade, the model adjusts traded pick values using probability-weighted VORP to reflect the third team’s lingering chance. The model runs a Monte Carlo-style simulation to assess how often different trades generate surplus, break even, or lose value—based on randomized outcomes across thousands of scenarios.
-    </p>
-
-    <p>
-      The model outputs full distributions of outcomes to identify both individual surplus-positive trades and overall structural value trends. It doesn't capture everything, but it’s a starting point to rethink how teams might act when faced with coin flip uncertainty.
-    </p>
-
-    <p>
-      <a href="https://trade-the-tie.onrender.com" target="_blank">Launch the Draft Tiebreaker Trade Machine</a><br>
-      <em>Note: It may take a moment to load — it's running on minimal resources and needs to wake up between sessions.</em>
-    </p>
+    <p><a href="https://trade-the-tie.onrender.com" target="_blank">Launch the Draft Tiebreaker Trade Machine</a></p>
 
   </main>
 
