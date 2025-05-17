@@ -228,3 +228,29 @@ p {
 body.dark .subheading {
   color: #fff;
 }
+/* Tiebreaker table light mode */
+.tiebreaker-table th.team-a {
+  background-color: #f9d9cc;
+  color: #000;
+}
+.tiebreaker-table th.team-b {
+  background-color: #d5ecf9;
+  color: #000;
+}
+
+/* Tiebreaker table dark mode */
+@media (prefers-color-scheme: dark) {
+  .tiebreaker-table th.team-a {
+    background-color: #4b2c2c;
+    color: #fff;
+  }
+  .tiebreaker-table th.team-b {
+    background-color: #1f3d4b;
+    color: #fff;
+  }
+  .tiebreaker-table td {
+    background-color: #1b1b1b;
+    color: #eee;
+  }
+}
+
