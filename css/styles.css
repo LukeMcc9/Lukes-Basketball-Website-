@@ -15,7 +15,7 @@ main {
   padding: 3rem 1.5rem 4rem 1.5rem;
 }
 
-/* Typography (structure only) */
+/* Typography (structure only — colors handled by light/dark blocks) */
 h1 {
   font-size: 2.25rem;
   margin-bottom: 1rem;
@@ -247,16 +247,21 @@ body.dark .subheading {
   }
 }
 
-/* Light mode: headings are black */
-@media (prefers-color-scheme: light) {
-  h1, h2, h3, h4, h5, h6 {
-    color: #000 !important;
-  }
+/* Heading Colors Based on Dark Mode Class */
+body:not(.dark-mode) h1,
+body:not(.dark-mode) h2,
+body:not(.dark-mode) h3,
+body:not(.dark-mode) h4,
+body:not(.dark-mode) h5,
+body:not(.dark-mode) h6 {
+  color: #000;
 }
 
-/* Dark mode: headings are white */
-@media (prefers-color-scheme: dark) {
-  h1, h2, h3, h4, h5, h6 {
-    color: #fff !important;
-  }
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #fff;
 }
