@@ -15,7 +15,7 @@ main {
   padding: 3rem 1.5rem 4rem 1.5rem;
 }
 
-/* Typography (structure only — colors handled in media queries) */
+/* Typography (structure only) */
 h1 {
   font-size: 2.25rem;
   margin-bottom: 1rem;
@@ -250,13 +250,13 @@ body.dark .subheading {
 /* Light mode: headings are black */
 @media (prefers-color-scheme: light) {
   h1, h2, h3, h4, h5, h6 {
-    color: #000000;
+    color: #000 !important;
   }
 }
 
 /* Dark mode: headings are white */
 @media (prefers-color-scheme: dark) {
   h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
+    color: #fff !important;
   }
 }
