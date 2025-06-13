@@ -252,13 +252,8 @@ body.dark .subheading {
     background-color: #1b1b1b;
     color: #eee;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
-  }
-}
+
 /* Light mode: headings are black */
 @media (prefers-color-scheme: light) {
   h1, h2, h3, h4, h5, h6 {
